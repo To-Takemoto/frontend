@@ -16,14 +16,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:8000',
+        target: 'https://shopping-mapper.onrender.com/',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
-  },
-  build: {
-    outDir: 'dist'  // 出力ディレクトリを指定
   }
 })
